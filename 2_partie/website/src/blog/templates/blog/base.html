@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block title %}
+    
+    {% endblock %}
+</head>
+<body>
+
+    {% block content %}
+    <br>
+    <br>
+    <h1>Acceuil du Blog</h1>
+    <br>
+    <br>
+    <a href=" {% url 'signup' %}" style="color:#DD7835;">Créer un compte</a>
+    <br>
+    <a href=" {% url 'blog-index' %}" style="color:#DD7835;">Aller au Blog</a>
+    <br>
+    <br>
+    <!--<img src="{% static 'images/ABBAMAT_2.png' %}">-->
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static % }
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+<a href=" {% url 'home' %}" style="color:#DD7835;">← Acceuil</a>
+<br>
+<br>
+<h1>Créer un article</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Créer">
+</form>
+
+{% endblock %}

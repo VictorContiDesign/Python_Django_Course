@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Le Blog</title>
+</head>
+<body>
+    <h1>Bonjour {{prenom | upper}}, bienvenue sur mon site RENDU</h1>
+    <h2>Aujourd'hui nous sommes le {{date | date:"d F Y H:i:s"}}</h2>    
+    <p>Page du Blog</p>
+</body>
+</html>

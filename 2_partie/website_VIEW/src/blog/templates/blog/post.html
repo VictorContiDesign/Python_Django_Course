@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load static % }
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+    <a href=" {% url 'home' %}" style="color:#DD7835;">← Acceuil</a>
+    <br>
+    <br>
+    <a href=" {% url 'blog-index' %} " style="color:#DD7835;">← Retour au sommaire</a>
+    <br>
+    <br>
+    <div class="bouton" >
+        <a style="color: white; background-color: green; padding: 8px 22px 8px 22px; text-decoration: none;" href="{% url 'blog-post-edit' slug=post.slug %}">Modifier l'article</a>
+    </div>
+    <br>
+    <div class="bouton" >
+        <a style="color: white; background-color: red; padding: 8px 22px 8px 22px; text-decoration: none;" href="{% url 'blog-post-delete' slug=post.slug %}">Supprimer l'article</a>
+    </div>
+    <br>
+    <br>
+    <h1>{{ post.title }}</h1>
+    <br>
+    <br>
+    <hr>
+    <p>{{ post.content }}</p>
+    
+{% endblock %}

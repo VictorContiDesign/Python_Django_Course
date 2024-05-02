@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+
+{% block title %} <title>Blog {{book.pk}}</title> {% endblock %}
+
+{% block content %}
+
+    <h1>{{book.title}}</h1>
+    <hr>
+    <h2>{{book.author.firstname}} {{book.author.lastname}}</h2>
+    <hr>
+    <p>{{book.summary}}</p>
+
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% load static % }
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+    <a href=" {% url 'home' %}" style="color:#DD7835;">← Acceuil</a>
+    <br>
+    <br>
+    <a href=" {% url 'home' %}" style="text-decoration: none;">
+    <h1>Le Blog</h1>
+    </a>
+    <br>
+    <br>
+    <hr>
+    <a href=" {% url 'article' %}" style="color:#DD7835;">Créer un article</a>
+    <hr>
+    <!--Sommaire-->
+    <p>Voici les articles disponibles dans ce blog : </p>
+    {% for tilePost in posts %}
+    <small>{{tilePost.title}} </small>
+    <br>
+    {% endfor %}
+    <hr>
+    <!--
+    {% if posts %}
+        <h1>Le blog contient {{ posts.count }} articles</h1>
+    {% elif not posts %}
+        <h1>Le blog ne contient aucun article</h1>
+    {% endif %}
+    -->
+    {% for post in posts %}
+    {% with categories=post.category.count %}
+
+    <!--Apercu des articles-->
+    <a href=" {% url 'blog-post' slug=post.slug %}" style="color:#DD7835; text-decoration: none;">
+        <h2>{{forloop.counter}}. {{ post.title }}</h2>
+    </a>
+    <small>Cet article contient {{categories}} catégories </small>
+    <br>
+    <p>{{post.content|truncatewords:100|striptags|safe}}</p>
+    <hr>
+
+{% endwith %}
+{% endfor %}
+{% endblock %}
+

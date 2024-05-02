@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load static % }
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+    <a href=" {% url 'home' %}" style="color:#DD7835;">← Acceuil</a>
+    <br>
+    <br>
+    <a href=" {% url 'blog-index' %} " style="color:#DD7835;">← Retour au sommaire</a>
+    <br>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Voulez-vos supprimer "{{ post.title }}"?</p>
+        <br>
+        <div>
+            <input style="color: white; background-color: red; padding: 8px 22px 8px 22px; font-weight: bold;" type="submit" value="Supprimer">
+        </div>
+    </form>
+    
+{% endblock %}
